@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: flask-ingress
+  name: nginx-ingress
 spec:
   rules:
-  - host: flask.example.com
+  - host: frontend.example.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: flask-service
+            name: frontend-service
             port:
               number: 80
